@@ -3,11 +3,13 @@ const readline = require("readline");
 const sql = require("mssql");
 
 const config = {
-  server: "localhost",
-  port: 1433,
-  user: "sa",
-  password: 'YDLd"7exx8D}:~8G',
-  database: "IMDB",
+  server: process.env.server,
+  port: parseInt(process.env.port),
+  user: process.env.user,
+  password: process.env.password,
+  options: {
+    database: process.env.database,
+  },
   option: {
     enableArithAbort: true,
     trustServerCertificate: true,

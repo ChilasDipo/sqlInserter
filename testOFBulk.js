@@ -53,12 +53,12 @@ const fs = require("fs");
 const readline = require("readline");
 
 const config = {
-  server: "localhost",
-  port: 1433,
-  user: "sa",
-  password: 'YDLd"7exx8D}:~8G',
+  server: process.env.server,
+  port: parseInt(process.env.port),
+  user: process.env.user,
+  password: process.env.password,
   options: {
-    database: "IMDB4",
+    database: process.env.database,
   },
   option: {
     enableArithAbort: true,
@@ -79,7 +79,7 @@ const rl = readline.createInterface({
   crlfDelay: Infinity,
 });
 
-let counter = 0;
+let counter = -1;
 
 const table = new sql.Table("Movies");
 table.create = true;
@@ -87,7 +87,7 @@ table.columns.add("tconst", sql.VarChar(255), {
   nullable: false,
   primary: true,
 });
-table.columns.add("titleType", sql.VarChar(255), { nullable: true });
+table.columns.add("titleType", sql.Int, { nullable: false });
 table.columns.add("primaryTitle", sql.VarChar(255), { nullable: true });
 table.columns.add("OriginalTitle", sql.VarChar(255), { nullable: true });
 table.columns.add("isAdult", sql.VarChar(255), { nullable: true });
@@ -97,7 +97,7 @@ table.columns.add("runtimeMinutes", sql.VarChar(255), { nullable: true });
 
 const tableTitleType = new sql.Table("TitleType");
 tableTitleType.create = true;
-tableTitleType.columns.add("ID", sql.VarChar(255), {
+tableTitleType.columns.add("ID", sql.Int, {
   nullable: false,
   primary: true,
 });
