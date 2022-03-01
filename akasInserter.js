@@ -3,12 +3,12 @@ const fs = require("fs");
 const readline = require("readline");
 
 const config = {
-  server: "localhost",
-  port: 1433,
-  user: "sa",
-  password: 'YDLd"7exx8D}:~8G',
+  server: process.env.server,
+  port: parseInt(process.env.port),
+  user: process.env.user,
+  password: process.env.password,
   options: {
-    database: "IMDB4",
+    database: process.env.database,
   },
   option: {
     enableArithAbort: true,
