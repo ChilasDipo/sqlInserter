@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "line-reader": "^0.4.0",
+    "msnodesqlv8": "^2.4.6",
     "mssql": "^8.0.2",
     "tedious": "^14.3.0"
   }

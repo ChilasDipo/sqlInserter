@@ -3,6 +3,8 @@
 let startid = new Date();
 console.log("start tid er " + startid);
 
+
+
 const genreList = [
   "Action",
   "Adventure",
@@ -48,11 +50,13 @@ const titleType = [
   "tvMovie",
 ];
 
-const sql = require("mssql");
+const sql = require('mssql/msnodesqlv8')
 const fs = require("fs");
 const readline = require("readline");
+const env = require("dotenv").config();
 
 const config = {
+  driver: "msnodesqlv8",
   server: process.env.server,
   port: parseInt(process.env.port),
   user: process.env.user,
@@ -65,10 +69,11 @@ const config = {
     trustServerCertificate: true,
   },
   trustServerCertificate: true,
-  connectionTimeout: 150000,
+  connectionTimeout: 1500000,
   pool: {
-    max: 10,
+    max: 100,
     min: 0,
+    idleTimeoutMillis: 30000,
   },
 };
 
@@ -78,22 +83,8 @@ const rl = readline.createInterface({
   input: fileStream,
   crlfDelay: Infinity,
 });
-
-let counter = -1;
-
-const table = new sql.Table("Movies");
-table.create = true;
-table.columns.add("tconst", sql.VarChar(255), {
-  nullable: false,
-  primary: true,
-});
-table.columns.add("titleType", sql.Int, { nullable: false });
-table.columns.add("primaryTitle", sql.VarChar(255), { nullable: true });
-table.columns.add("OriginalTitle", sql.VarChar(255), { nullable: true });
-table.columns.add("isAdult", sql.VarChar(255), { nullable: true });
-table.columns.add("startYear", sql.VarChar(255), { nullable: true });
-table.columns.add("endYear", sql.VarChar(255), { nullable: true });
-table.columns.add("runtimeMinutes", sql.VarChar(255), { nullable: true });
+let counterForStopping = -1;
+let counterForDataSending = -1;
 
 const tableTitleType = new sql.Table("TitleType");
 tableTitleType.create = true;
@@ -126,25 +117,81 @@ tableGenresToTconst.columns.add("tconst", sql.VarChar(255), {
 });
 tableGenresToTconst.columns.add("Genre", sql.VarChar(255), { nullable: false });
 
+//let request = new sql.Request();
+//request.bulk(tableGenres);
+//request.bulk(tableGenresToTconst);
+//request.bulk(tableTitleType);
+
+
+
+
+
+
+
+async function messageHandler() {
+  await conn; // ensures that the pool has been created
+  try {
+      const request = pool.request(); // or: new sql.Request(pool1)
+      const result =  request.bulk(table, (err, rowCount) => {
+        console.log(err);
+        console.log(rowCount);
+    })
+      //console.dir(result)
+      return result;
+  } catch (err) {
+      console.error('SQL error', err);
+  }
+}
+
+
 async function bulkInserts() {
+  let table = new sql.Table("Movies");
+table.create = true;
+table.columns.add("tconst", sql.VarChar(255), {
+  nullable: false,
+  primary: true,
+});
+table.columns.add("titleType", sql.Int, { nullable: false });
+table.columns.add("primaryTitle", sql.VarChar(255), { nullable: true });
+table.columns.add("OriginalTitle", sql.VarChar(255), { nullable: true });
+table.columns.add("isAdult", sql.VarChar(255), { nullable: true });
+table.columns.add("startYear", sql.VarChar(255), { nullable: true });
+table.columns.add("endYear", sql.VarChar(255), { nullable: true });
+table.columns.add("runtimeMinutes", sql.VarChar(255), { nullable: true });
   for await (const line of rl) {
-    counter++;
-    if (counter >= 50000) {
-      console.log("counter is 50000");
-      let sluttid = new Date();
-      console.log("Sluttid er" + sluttid);
-      break;
-    }
-
-    let array = line.split("\t");
-    for (let index = 0; index < array.length; index++) {
-      if (array[index] == "\\N") {
-        array[index] = null;
-      }
-    }
-
     try {
-      // console.log("Table added " + array)
+      counterForStopping++;
+      if (counterForStopping == 500000) {
+        console.log("Stopped" + counterForStopping);
+       
+        adddata(table)
+      
+        table = new sql.Table("Movies");
+        table.create = true;
+        table.columns.add("tconst", sql.VarChar(255), {
+          nullable: false,
+          primary: true,
+        });
+        table.columns.add("titleType", sql.Int, { nullable: false });
+        table.columns.add("primaryTitle", sql.VarChar(255), { nullable: true });
+        table.columns.add("OriginalTitle", sql.VarChar(255), { nullable: true });
+        table.columns.add("isAdult", sql.VarChar(255), { nullable: true });
+        table.columns.add("startYear", sql.VarChar(255), { nullable: true });
+        table.columns.add("endYear", sql.VarChar(255), { nullable: true });
+        table.columns.add("runtimeMinutes", sql.VarChar(255), { nullable: true });
+        
+
+        counterForStopping = 0;
+      
+      }
+
+
+      let array = line.split("\t");
+      for (let index = 0; index < array.length; index++) {
+        if (array[index] == "\\N") {
+          array[index] = null;
+        }
+      }
 
       table.rows.add(
         array[0],
@@ -168,28 +215,36 @@ async function bulkInserts() {
         }
       }
     } catch (err) {
-      // ... error checks
-      console.log("Error");
-      console.log(err.message);
+      console.log(err);
     }
   }
 }
-bulkInserts().then();
-sql
-  .connect(config)
-  .then(() => {
-    console.log("connected");
 
-    const request = new sql.Request();
-    request.bulk(tableGenres);
-    request.bulk(tableGenresToTconst);
-    request.bulk(tableTitleType);
-    return request.bulk(table);
+bulkInserts()
+ 
+async function executeQuery(table) {
+  
+  return sql.connect(config).then(pool => {
+      // Query    
+   
+      return pool.request().bulk(table)
+  }).then(result => {
+      
+  }).catch(err => {
+     console.log(err)
   })
+}
+async function getData(table) {
+  await executeQuery(table);
+ 
+}
 
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+async function adddata(table){
+  let cnn = await sql.connect(config)
+
+// query
+let result = await sql.bulk(table)
+
+// close connection
+await cnn.close()
+}
