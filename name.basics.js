@@ -1,132 +1,124 @@
-const sql = require("mssql");
-const fs = require("fs");
-const readline = require("readline");
+const lineReader = require("line-reader");
 const env = require("dotenv").config();
+const sql = require("mssql");
 
-const config = {
-  server: process.env.server,
-  port: parseInt(process.env.port),
+let counter = 0;
+let bulkList = [];
+
+const sqlConfig = {
   user: process.env.user,
   password: process.env.password,
-  options: {
-    database: process.env.database,
-  },
-  option: {
-    enableArithAbort: true,
-    trustServerCertificate: true,
-  },
-  trustServerCertificate: true,
-  connectionTimeout: 150000,
+  database: process.env.database,
+  server: "localhost",
   pool: {
     max: 10,
     min: 0,
+    idleTimeoutMillis: 30000,
+  },
+  options: {
+    encrypt: true, // for azure
+    trustServerCertificate: true, // change to true for local dev / self-signed certs
   },
 };
 
-const fileStream = fs.createReadStream("nameData.tsv");
+let countCounter = 0;
 
-const rl = readline.createInterface({
-  input: fileStream,
-  crlfDelay: Infinity,
-});
+let names = giveEmptyTable()[0];
+let primaryProfession = giveEmptyTable()[1];
+let knowForTitles = giveEmptyTable()[2];
 
-const names = new sql.Table("Names");
-names.create = true;
-names.columns.add("nconst", sql.VarChar(255), {
-  nullable: false,
-  primary: true,
-});
-names.columns.add("primaryName", sql.VarChar(255), { nullable: true });
-names.columns.add("birthYear", sql.VarChar(255), { nullable: true });
-names.columns.add("deathYear", sql.VarChar(255), { nullable: true });
+lineReader.eachLine("nameData.tsv", function (line, last) {
+  if ((countCounter == 0) & (counter == 0)) {
+    console.log("First line is " + line);
+    line = "nm0000000	test	0000	0000	test,test,test	test,test,test,test";
+    console.log("First line is " + line);
+  }
 
-const primaryProfession = new sql.Table("PrimaryProfession");
-primaryProfession.create = true;
-primaryProfession.columns.add("nconst", sql.VarChar(255), { nullable: false });
-primaryProfession.columns.add("profession", sql.VarChar(255), { nullable: true });
-
-
-const knowForTitles = new sql.Table("KnownForTitles");
-knowForTitles.create = true;
-knowForTitles.columns.add("nconst", sql.VarChar(255), { nullable: false });
-knowForTitles.columns.add("tconst", sql.VarChar(255), { nullable: false });
-
-let counter = -1 
-
-async function bulkInserts() {
-  for await (const line of rl) {
-    counter++;
-    if(counter == 0){
-      continue
-    }
-    if (counter >= 10) {
-      console.log("counter is 50000");
-      let sluttid = new Date();
-      console.log("Sluttid er" + sluttid);
-      break;
-    }
-
-    let array = line.split("\t");
-    for (let index = 0; index < array.length; index++) {
-      if (array[index] == "\\N") {
-        array[index] = null;
-      }
-    }
-
-    try {
-      // console.log("Table added " + array)
-
-      names.rows.add(
-        array[0],
-        array[1],
-        array[2],
-        array[3],
-      );
-
-      if (array[4] != null) {
-        let profession = array[4].split(",");
-
-        for (let index = 0; index < profession.length; index++) {
-          primaryProfession.rows.add(
-            array[0],
-            (profession[index])
-          );
-        }
-      }
-
-      if (array[5] != null) {
-        let titles = array[5].split(",");
-
-        for (let index = 0; index < titles.length; index++) {
-          knowForTitles.rows.add(
-            array[0],
-            (titles[index])
-          );
-        }
-      }
-
-    } catch (err) {
-      // ... error checks
-      console.log("Error");
-      console.log(err.message);
+  counter++;
+  let array = line.split("\t");
+  for (let index = 0; index < array.length; index++) {
+    if (array[index] == "\\N") {
+      array[index] = null;
     }
   }
-}
-bulkInserts().then();
-sql
-  .connect(config)
-  .then(() => {
-    console.log("connected");
 
-    const request = new sql.Request();
-    request.bulk(knowForTitles);
-    request.bulk(primaryProfession);
-    return request.bulk(names);
-  })
+  names.rows.add(array[0], array[1], array[2], array[3]);
 
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log(err);
+  if (array[4] != null) {
+    let profession = array[4].split(",");
+
+    for (let index = 0; index < profession.length; index++) {
+      primaryProfession.rows.add(array[0], profession[index]);
+    }
+  }
+
+  if (array[5] != null) {
+    let titles = array[5].split(",");
+
+    for (let index = 0; index < titles.length; index++) {
+      knowForTitles.rows.add(array[0], titles[index]);
+    }
+  }
+
+  if (counter == 50 || last == true) {
+    insertData(names, primaryProfession, knowForTitles);
+    counter = 0;
+    countCounter++;
+    names = giveEmptyTable()[0];
+    primaryProfession = giveEmptyTable()[1];
+    knowForTitles = giveEmptyTable()[2];
+
+    if (last == true || countCounter == 6) {
+      return false;
+    }
+  }
+});
+
+function giveEmptyTable() {
+  let names = new sql.Table("Names");
+  names.create = true;
+  names.columns.add("nconst", sql.VarChar(255), {
+    nullable: false,
+    primary: true,
   });
+  names.columns.add("primaryName", sql.VarChar(255), { nullable: true });
+  names.columns.add("birthYear", sql.VarChar(255), { nullable: true });
+  names.columns.add("deathYear", sql.VarChar(255), { nullable: true });
+
+  let primaryProfession = new sql.Table("PrimaryProfession");
+  primaryProfession.create = true;
+  primaryProfession.columns.add("nconst", sql.VarChar(255), {
+    nullable: false,
+  });
+  primaryProfession.columns.add("profession", sql.VarChar(255), {
+    nullable: true,
+  });
+
+  let knowForTitles = new sql.Table("KnownForTitles");
+  knowForTitles.create = true;
+  knowForTitles.columns.add("nconst", sql.VarChar(255), { nullable: false });
+  knowForTitles.columns.add("tconst", sql.VarChar(255), { nullable: false });
+
+  return [names, primaryProfession, knowForTitles];
+}
+
+async function insertData(names, primaryProfession, knowForTitles) {
+  try {
+    const poolPromise = new sql.ConnectionPool(sqlConfig)
+      .connect()
+      .then((pool) => {
+        // console.log('Connected to MSSQL')
+        pool.request().bulk(names);
+        pool.request().bulk(primaryProfession);
+        pool.request().bulk(knowForTitles);
+        return pool;
+      })
+      .catch((err) =>
+        console.log("Database Connection Failed! Bad Config: ", err)
+      );
+  } catch (error) {
+    console.log(error);
+    console.log(table);
+    return;
+  }
+}

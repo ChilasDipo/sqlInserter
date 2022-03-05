@@ -72,7 +72,7 @@ lineReader.eachLine('data.tsv', function(line,last) {
       table = giveEmptyTable()
       
 
-      if (last==true || countCounter == 4) {
+      if (last==true || countCounter == 6) {
         return false
       }
     }
@@ -84,9 +84,9 @@ function giveEmptyTable(){
   let table = new sql.Table('Movies') // or temporary table, e.g. #temptable
     table.create = true
     table.columns.add('tconst', sql.VarChar(255), {nullable: false, primary: true})
-    table.columns.add("titleType", sql.VarChar(255), { nullable: true });
-    table.columns.add("primaryTitle", sql.VarChar(255), { nullable: true });
-    table.columns.add("OriginalTitle", sql.VarChar(255), { nullable: true });
+    table.columns.add("titleType", sql.VarChar(255), { nullable: false });
+    table.columns.add("primaryTitle", sql.NVarChar(255), { nullable: true });
+    table.columns.add("OriginalTitle", sql.NVarChar(255), { nullable: true });
     table.columns.add("isAdult", sql.VarChar(255), { nullable: true });
     table.columns.add("startYear", sql.VarChar(255), { nullable: true });
     table.columns.add("endYear", sql.VarChar(255), { nullable: true });
@@ -101,7 +101,7 @@ async function insertData(table){
 const poolPromise = new sql.ConnectionPool(sqlConfig)
   .connect()
   .then(pool => {
-    console.log('Connected to MSSQL')
+   // console.log('Connected to MSSQL')
     pool.request().bulk(table);
     return pool
   })
@@ -111,6 +111,8 @@ const poolPromise = new sql.ConnectionPool(sqlConfig)
 
   }catch (error) {
     console.log(error)
+    console.log(table)
+    return
   }
 
 }
