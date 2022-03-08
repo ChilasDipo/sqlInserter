@@ -40,7 +40,6 @@ const lineReader = require('line-reader');
 const env = require("dotenv").config();
 const sql = require('mssql')
 
-let counter = 0;
 let bulkList = []
 
 const sqlConfig = {
