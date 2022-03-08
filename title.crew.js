@@ -34,7 +34,6 @@ lineReader.eachLine('crewData.tsv', function(line,last) {
     console.log("First line is " + line);
   }
 
-
   counter++
   let array = line.split("\t");
       for (let index = 0; index < array.length; index++) {
@@ -73,12 +72,11 @@ lineReader.eachLine('crewData.tsv', function(line,last) {
       director = giveEmptyTable()[0]
       writer = giveEmptyTable()[1]
 
-      if (last==true || countCounter == 6)  {
+      if (last==true || countCounter == 2)  {
         console.log('Done')
         return false
       }
     }
-
 
 });
 
@@ -103,7 +101,7 @@ async function insertData(director,writer){
 const poolPromise = new sql.ConnectionPool(sqlConfig)
   .connect()
   .then(pool => {
-   // console.log('Connected to MSSQL')
+   console.log('Connected to MSSQL')
     pool.request().bulk(director);
     pool.request().bulk(writer);
     return pool
