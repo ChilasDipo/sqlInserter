@@ -1,5 +1,3 @@
-
-
 const lineReader = require('line-reader');
 const env = require("dotenv").config();
 const sql = require('mssql')
@@ -25,6 +23,36 @@ const sqlConfig = {
 
 let countCounter = 0;
 
+const genreList = [
+  "Action",
+  "Adventure",
+  "Animation",
+  "Biography",
+  "Comedy",
+  "Crime",
+  "Documentary",
+  "Drama",
+  "Family",
+  "Fantasy",
+  "Film Noir",
+  "Game-Show",
+  "History",
+  "Horror",
+  "Music",
+  "Musical",
+  "Mystery",
+  "News",
+  "Reality-TV",
+  "Romance",
+  "Sci-Fi",
+  "Short",
+  "Sport",
+  "Talk-Show",
+  "Thriller",
+  "War",
+  "Western",
+];
+
 const titleType = [
   "tvEpisode",
   "short",
@@ -40,8 +68,9 @@ const titleType = [
   "tvMovie",
 ];
 
-let table = giveEmptyTable()
 
+let table = giveEmptyTable()[0]
+let tableGenresToTconst = giveEmptyTable()[1]
 lineReader.eachLine('data.tsv', function(line,last) {
 
 
@@ -64,15 +93,26 @@ lineReader.eachLine('data.tsv', function(line,last) {
       array[6],
       array[7]
     );
+
+    if (array[8] != null) {
+      let genreArray = array[8].split(",");
+
+      for (let index = 0; index < genreArray.length; index++) {
+        tableGenresToTconst.rows.add(
+          array[0],
+          (genreList.indexOf(genreArray[index]) + 1).toString()
+        );
+      }
+    }
       
     if (counter==250000 || last==true) {
-      insertData(table)
+      insertData(table,tableGenresToTconst)
       counter=0
      countCounter++
-      table = giveEmptyTable()
-      
+      table = giveEmptyTable()[0]
+      tableGenresToTconst = giveEmptyTable()[1]
 
-      if (last==true) {
+      if (last==true || countCounter == 8) {
         console.log('Done')
         return false
       }
@@ -93,10 +133,19 @@ function giveEmptyTable(){
     table.columns.add("endYear", sql.VarChar(255), { nullable: true });
     table.columns.add("runtimeMinutes", sql.VarChar(255), { nullable: true });
     
-    return table
+
+    let tableGenresToTconst = new sql.Table("GenresToTconst");
+    tableGenresToTconst.create = true;
+    tableGenresToTconst.columns.add("tconst", sql.VarChar(255), {
+    nullable: false,
+    });
+    tableGenresToTconst.columns.add("Genre", sql.VarChar(255), { nullable: false });
+
+
+    return [table,tableGenresToTconst]
 }
 
-async function insertData(table){
+async function insertData(table,tableGenresToTconst){
   try {
   
 const poolPromise = new sql.ConnectionPool(sqlConfig)
@@ -104,6 +153,7 @@ const poolPromise = new sql.ConnectionPool(sqlConfig)
   .then(pool => {
    // console.log('Connected to MSSQL')
     pool.request().bulk(table);
+    pool.request().bulk(tableGenresToTconst);
     return pool
   })
   .catch(err => console.log('Database Connection Failed! Bad Config: ', err))
