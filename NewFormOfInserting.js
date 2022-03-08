@@ -65,14 +65,15 @@ lineReader.eachLine('data.tsv', function(line,last) {
       array[7]
     );
       
-    if (counter==500000 || last==true) {
+    if (counter==250000 || last==true) {
       insertData(table)
       counter=0
      countCounter++
       table = giveEmptyTable()
       
 
-      if (last==true || countCounter == 6) {
+      if (last==true) {
+        console.log('Done')
         return false
       }
     }
@@ -85,8 +86,8 @@ function giveEmptyTable(){
     table.create = true
     table.columns.add('tconst', sql.VarChar(255), {nullable: false, primary: true})
     table.columns.add("titleType", sql.VarChar(255), { nullable: false });
-    table.columns.add("primaryTitle", sql.NVarChar(255), { nullable: true });
-    table.columns.add("OriginalTitle", sql.NVarChar(255), { nullable: true });
+    table.columns.add("primaryTitle", sql.NVarChar(sql.MAX), {  nullable: true });
+    table.columns.add("OriginalTitle", sql.NVarChar(sql.MAX), { nullable: true });
     table.columns.add("isAdult", sql.VarChar(255), { nullable: true });
     table.columns.add("startYear", sql.VarChar(255), { nullable: true });
     table.columns.add("endYear", sql.VarChar(255), { nullable: true });

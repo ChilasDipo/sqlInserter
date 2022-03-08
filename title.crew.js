@@ -1,71 +1,48 @@
-const sql = require("mssql");
-const fs = require("fs");
-const readline = require("readline");
+const lineReader = require('line-reader');
 const env = require("dotenv").config();
+const sql = require('mssql')
 
-const config = {
-  server: process.env.server,
-  port: parseInt(process.env.port),
+let counter = 0;
+let bulkList = []
+
+const sqlConfig = {
   user: process.env.user,
   password: process.env.password,
-  options: {
-    database: process.env.database,
-  },
-  option: {
-    enableArithAbort: true,
-    trustServerCertificate: true,
-  },
-  trustServerCertificate: true,
-  connectionTimeout: 150000,
+  database: process.env.database,
+  server: 'localhost',
   pool: {
     max: 10,
     min: 0,
+    idleTimeoutMillis: 30000
   },
-};
+  options: {
+    encrypt: true, // for azure
+    trustServerCertificate: true // change to true for local dev / self-signed certs
+  }
+}
 
-const fileStream = fs.createReadStream("crewData.tsv");
+let countCounter = 0;
 
-const rl = readline.createInterface({
-  input: fileStream,
-  crlfDelay: Infinity,
-});
+let director = giveEmptyTable()[0]
+let writer = giveEmptyTable()[1]
 
-const director = new sql.Table("Directors");
-director.create = true;
-director.columns.add("tconst", sql.VarChar(255), { nullable: false });
-director.columns.add("nconst", sql.VarChar(255), { nullable: true });
+lineReader.eachLine('crewData.tsv', function(line,last) {
 
-const writer = new sql.Table("Writers");
-writer.create = true;
-writer.columns.add("tconst", sql.VarChar(255), { nullable: false });
-writer.columns.add("nconst", sql.VarChar(255), { nullable: true });
+  if ((countCounter == 0) & (counter == 0)) {
+    console.log("First line is " + line);
+    line = "tt0000000	nm0000000	\N";
+    console.log("First line is " + line);
+  }
 
-let counter = -1 
 
-async function bulkInserts() {
-  for await (const line of rl) {
-    counter++;
-    if(counter == 0){
-      continue
-    }
-    if (counter >= 10) {
-      console.log("counter is 50000");
-      let sluttid = new Date();
-      console.log("Sluttid er" + sluttid);
-      break;
-    }
-
-    let array = line.split("\t");
-    for (let index = 0; index < array.length; index++) {
-      if (array[index] == "\\N") {
-        array[index] = null;
+  counter++
+  let array = line.split("\t");
+      for (let index = 0; index < array.length; index++) {
+        if (array[index] == "\\N") {
+          array[index] = null;
+        }
       }
-    }
 
-    try {
-      // console.log("Table added " + array)
-
-        
       if (array[1] != null) {
         let directorarray = array[1].split(",");
 
@@ -88,29 +65,57 @@ async function bulkInserts() {
           );
         }
       }
+      
+    if (counter==250000 || last==true) {
+      insertData(director,writer,)
+      counter=0
+     countCounter++
+      director = giveEmptyTable()[0]
+      writer = giveEmptyTable()[1]
 
-
-    } catch (err) {
-      // ... error checks
-      console.log("Error");
-      console.log(err.message);
+      if (last==true || countCounter == 6)  {
+        console.log('Done')
+        return false
+      }
     }
-  }
+
+
+});
+
+function giveEmptyTable(){
+  let director = new sql.Table("Directors");
+  director.create = true;
+  director.columns.add("tconst", sql.VarChar(255), { nullable: false });
+  director.columns.add("nconst", sql.VarChar(255), { nullable: true });
+  
+  let writer = new sql.Table("Writers");
+  writer.create = true;
+  writer.columns.add("tconst", sql.VarChar(255), { nullable: false });
+  writer.columns.add("nconst", sql.VarChar(255), { nullable: true });
+  
+    
+    return [director,writer ]
 }
-bulkInserts().then();
-sql
-  .connect(config)
-  .then(() => {
-    console.log("connected");
 
-    const request = new sql.Request();
-    request.bulk(director);
-    return request.bulk(writer);
+async function insertData(director,writer){
+  try {
+  
+const poolPromise = new sql.ConnectionPool(sqlConfig)
+  .connect()
+  .then(pool => {
+   // console.log('Connected to MSSQL')
+    pool.request().bulk(director);
+    pool.request().bulk(writer);
+    return pool
   })
+  .catch(err => console.log('Database Connection Failed! Bad Config: ', err))
 
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+
+
+  }catch (error) {
+    console.log(error)
+    console.log(table)
+    return
+  }
+
+}

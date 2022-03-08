@@ -60,7 +60,7 @@ lineReader.eachLine("nameData.tsv", function (line, last) {
     }
   }
 
-  if (counter == 50 || last == true) {
+  if (counter == 250000 || last == true) {
     insertData(names, primaryProfession, knowForTitles);
     counter = 0;
     countCounter++;
@@ -68,7 +68,7 @@ lineReader.eachLine("nameData.tsv", function (line, last) {
     primaryProfession = giveEmptyTable()[1];
     knowForTitles = giveEmptyTable()[2];
 
-    if (last == true || countCounter == 6) {
+    if (last == true || countCounter == 10) {
       return false;
     }
   }
