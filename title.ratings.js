@@ -66,8 +66,7 @@ function giveEmptyTable(){
   const table = new sql.Table("Ratings");
   table.create = true;
   table.columns.add("tconst", sql.VarChar(255), {
-    nullable: false,
-    primary: true,
+    nullable: false
   });
   table.columns.add("averageRating", sql.Real, { nullable: true });
   table.columns.add("numVotes", sql.Int, { nullable: true });
