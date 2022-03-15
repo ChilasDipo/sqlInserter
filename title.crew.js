@@ -66,7 +66,7 @@ lineReader.eachLine('crewData.tsv', function(line,last) {
       }
       
     if (counter==250000 || last==true) {
-      insertData(director,writer,)
+      insertData(director,writer)
       counter=0
      countCounter++
       director = giveEmptyTable()[0]

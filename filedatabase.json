@@ -1,0 +1,1001 @@
+ { "Ratings": [  
+ { "txonst" : "tt0000000",  "rating" : 
+      "0", "numberOfVotes" : 
+       "0" } 
+ , 
+ { "txonst" : "tt0000001",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "1864" } 
+ , 
+ { "txonst" : "tt0000002",  "rating" : 
+      "6", "numberOfVotes" : 
+       "244" } 
+ , 
+ { "txonst" : "tt0000003",  "rating" : 
+      "6.5", "numberOfVotes" : 
+       "1632" } 
+ , 
+ { "txonst" : "tt0000004",  "rating" : 
+      "6", "numberOfVotes" : 
+       "158" } 
+ , 
+ , 
+ { "txonst" : "tt0000005",  "rating" : 
+      "6.2", "numberOfVotes" : 
+       "2457" } 
+ { "txonst" : "tt0000006",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "164" } 
+ , 
+ , 
+ { "txonst" : "tt0000007",  "rating" : 
+      "5.4", "numberOfVotes" : 
+       "766" } 
+ { "txonst" : "tt0000008",  "rating" : 
+      "5.5", "numberOfVotes" : 
+       "2006" } 
+ , 
+ , 
+ { "txonst" : "tt0000009",  "rating" : 
+      "5.9", "numberOfVotes" : 
+       "193" } 
+ , 
+ { "txonst" : "tt0000010",  "rating" : 
+      "6.9", "numberOfVotes" : 
+       "6723" } 
+ { "txonst" : "tt0000011",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "343" } 
+ , 
+ { "txonst" : "tt0000012",  "rating" : 
+      "7.5", "numberOfVotes" : 
+       "11541" } 
+ , 
+ { "txonst" : "tt0000013",  "rating" : 
+      "5.8", "numberOfVotes" : 
+       "1782" } 
+ , 
+ , 
+ { "txonst" : "tt0000014",  "rating" : 
+      "7.1", "numberOfVotes" : 
+       "5177" } 
+ { "txonst" : "tt0000015",  "rating" : 
+      "6.2", "numberOfVotes" : 
+       "984" } 
+ , 
+ { "txonst" : "tt0000016",  "rating" : 
+      "5.9", "numberOfVotes" : 
+       "1387" } 
+ { "txonst" : "tt0000017",  "rating" : 
+      "4.6", "numberOfVotes" : 
+       "305" } 
+ , 
+ , 
+ { "txonst" : "tt0000018",  "rating" : 
+      "5.3", "numberOfVotes" : 
+       "558" } 
+ , 
+ { "txonst" : "tt0000019",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "30" } 
+ , 
+ { "txonst" : "tt0000020",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "330" } 
+ , 
+ , 
+ { "txonst" : "tt0000022",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "1026" } 
+ { "txonst" : "tt0000023",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "1345" } 
+ , 
+ { "txonst" : "tt0000024",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "86" } 
+ , 
+ { "txonst" : "tt0000025",  "rating" : 
+      "4.3", "numberOfVotes" : 
+       "39" } 
+ , 
+ { "txonst" : "tt0000026",  "rating" : 
+      "5.6", "numberOfVotes" : 
+       "1455" } 
+ , 
+ { "txonst" : "tt0000027",  "rating" : 
+      "5.6", "numberOfVotes" : 
+       "1083" } 
+ , 
+ , 
+ { "txonst" : "tt0000028",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "997" } 
+ , 
+ { "txonst" : "tt0000029",  "rating" : 
+      "6", "numberOfVotes" : 
+       "3179" } 
+ { "txonst" : "tt0000030",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "794" } 
+ , 
+ , 
+ { "txonst" : "tt0000031",  "rating" : 
+      "5.5", "numberOfVotes" : 
+       "952" } 
+ { "txonst" : "tt0000032",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "394" } 
+ , 
+ , 
+ { "txonst" : "tt0000033",  "rating" : 
+      "5.6", "numberOfVotes" : 
+       "965" } 
+ { "txonst" : "tt0000034",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "186" } 
+ , 
+ { "txonst" : "tt0000035",  "rating" : 
+      "5.5", "numberOfVotes" : 
+       "76" } 
+ , 
+ , 
+ { "txonst" : "tt0000036",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "577" } 
+ , 
+ , 
+ { "txonst" : "tt0000038",  "rating" : 
+      "4.2", "numberOfVotes" : 
+       "190" } 
+ { "txonst" : "tt0000037",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "62" } 
+ , 
+ { "txonst" : "tt0000039",  "rating" : 
+      "3.6", "numberOfVotes" : 
+       "25" } 
+ { "txonst" : "tt0000040",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "61" } 
+ , 
+ { "txonst" : "tt0000041",  "rating" : 
+      "6.7", "numberOfVotes" : 
+       "1712" } 
+ , 
+ { "txonst" : "tt0000042",  "rating" : 
+      "4.2", "numberOfVotes" : 
+       "36" } 
+ , 
+ { "txonst" : "tt0000043",  "rating" : 
+      "3.6", "numberOfVotes" : 
+       "31" } 
+ , 
+ { "txonst" : "tt0000044",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "42" } 
+ , 
+ { "txonst" : "tt0000045",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "31" } 
+ , 
+ { "txonst" : "tt0000046",  "rating" : 
+      "4.2", "numberOfVotes" : 
+       "33" } 
+ , 
+ , 
+ { "txonst" : "tt0000047",  "rating" : 
+      "3.7", "numberOfVotes" : 
+       "33" } 
+ { "txonst" : "tt0000048",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "175" } 
+ , 
+ { "txonst" : "tt0000049",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "46" } 
+ , 
+ { "txonst" : "tt0000050",  "rating" : 
+      "4.2", "numberOfVotes" : 
+       "33" } 
+ , 
+ { "txonst" : "tt0000051",  "rating" : 
+      "3.8", "numberOfVotes" : 
+       "33" } 
+ { "txonst" : "tt0000052",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "90" } 
+ , 
+ , 
+ , 
+ { "txonst" : "tt0000053",  "rating" : 
+      "2.9", "numberOfVotes" : 
+       "17" } 
+ { "txonst" : "tt0000054",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "33" } 
+ , 
+ { "txonst" : "tt0000055",  "rating" : 
+      "3.8", "numberOfVotes" : 
+       "29" } 
+ , 
+ { "txonst" : "tt0000056",  "rating" : 
+      "3.2", "numberOfVotes" : 
+       "21" } 
+ , 
+ { "txonst" : "tt0000057",  "rating" : 
+      "4.3", "numberOfVotes" : 
+       "31" } 
+ , 
+ { "txonst" : "tt0000058",  "rating" : 
+      "4.3", "numberOfVotes" : 
+       "31" } 
+ , 
+ { "txonst" : "tt0000059",  "rating" : 
+      "3.6", "numberOfVotes" : 
+       "26" } 
+ , 
+ { "txonst" : "tt0000060",  "rating" : 
+      "7.6", "numberOfVotes" : 
+       "84" } 
+ , 
+ { "txonst" : "tt0000061",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "23" } 
+ , 
+ { "txonst" : "tt0000062",  "rating" : 
+      "6.4", "numberOfVotes" : 
+       "188" } 
+ , 
+ { "txonst" : "tt0000064",  "rating" : 
+      "3.4", "numberOfVotes" : 
+       "27" } 
+ { "txonst" : "tt0000063",  "rating" : 
+      "3.6", "numberOfVotes" : 
+       "26" } 
+ , 
+ { "txonst" : "tt0000065",  "rating" : 
+      "3.6", "numberOfVotes" : 
+       "27" } 
+ , 
+ { "txonst" : "tt0000066",  "rating" : 
+      "3.4", "numberOfVotes" : 
+       "27" } 
+ , 
+ { "txonst" : "tt0000067",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "57" } 
+ , 
+ { "txonst" : "tt0000068",  "rating" : 
+      "3.7", "numberOfVotes" : 
+       "29" } 
+ , 
+ , 
+ { "txonst" : "tt0000069",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "423" } 
+ , 
+ { "txonst" : "tt0000070",  "rating" : 
+      "6.4", "numberOfVotes" : 
+       "2530" } 
+ , 
+ { "txonst" : "tt0000071",  "rating" : 
+      "3.5", "numberOfVotes" : 
+       "28" } 
+ , 
+ { "txonst" : "tt0000072",  "rating" : 
+      "3.8", "numberOfVotes" : 
+       "26" } 
+ , 
+ , 
+ { "txonst" : "tt0000073",  "rating" : 
+      "3.6", "numberOfVotes" : 
+       "29" } 
+ , 
+ { "txonst" : "tt0000074",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "30" } 
+ , 
+ { "txonst" : "tt0000075",  "rating" : 
+      "6.3", "numberOfVotes" : 
+       "1797" } 
+ , 
+ { "txonst" : "tt0000076",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "509" } 
+ , 
+ { "txonst" : "tt0000077",  "rating" : 
+      "4.6", "numberOfVotes" : 
+       "33" } 
+ { "txonst" : "tt0000078",  "rating" : 
+      "3.9", "numberOfVotes" : 
+       "71" } 
+ , 
+ , 
+ { "txonst" : "tt0000079",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "34" } 
+ , 
+ { "txonst" : "tt0000080",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "30" } 
+ { "txonst" : "tt0000081",  "rating" : 
+      "4.2", "numberOfVotes" : 
+       "31" } 
+ , 
+ { "txonst" : "tt0000082",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "46" } 
+ , 
+ , 
+ { "txonst" : "tt0000083",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "31" } 
+ { "txonst" : "tt0000084",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "29" } 
+ , 
+ , 
+ { "txonst" : "tt0000085",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "31" } 
+ { "txonst" : "tt0000086",  "rating" : 
+      "4.3", "numberOfVotes" : 
+       "32" } 
+ , 
+ { "txonst" : "tt0000088",  "rating" : 
+      "4.3", "numberOfVotes" : 
+       "31" } 
+ , 
+ , 
+ { "txonst" : "tt0000089",  "rating" : 
+      "6.2", "numberOfVotes" : 
+       "948" } 
+ { "txonst" : "tt0000087",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "36" } 
+ , 
+ { "txonst" : "tt0000090",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "30" } 
+ , 
+ , 
+ { "txonst" : "tt0000091",  "rating" : 
+      "6.7", "numberOfVotes" : 
+       "3321" } 
+ { "txonst" : "tt0000092",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "28" } 
+ , 
+ { "txonst" : "tt0000093",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "89" } 
+ , 
+ , 
+ { "txonst" : "tt0000094",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "30" } 
+ , 
+ { "txonst" : "tt0000095",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "33" } 
+ { "txonst" : "tt0000096",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "28" } 
+ , 
+ { "txonst" : "tt0000097",  "rating" : 
+      "5", "numberOfVotes" : 
+       "32" } 
+ , 
+ { "txonst" : "tt0000098",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "35" } 
+ , 
+ { "txonst" : "tt0000099",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "31" } 
+ , 
+ { "txonst" : "tt0000100",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "49" } 
+ , 
+ , 
+ { "txonst" : "tt0000101",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "27" } 
+ { "txonst" : "tt0000102",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "25" } 
+ , 
+ , 
+ { "txonst" : "tt0000103",  "rating" : 
+      "5.4", "numberOfVotes" : 
+       "26" } 
+ { "txonst" : "tt0000104",  "rating" : 
+      "5.6", "numberOfVotes" : 
+       "447" } 
+ , 
+ , 
+ { "txonst" : "tt0000105",  "rating" : 
+      "5", "numberOfVotes" : 
+       "28" } 
+ { "txonst" : "tt0000106",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "22" } 
+ , 
+ { "txonst" : "tt0000107",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "27" } 
+ , 
+ { "txonst" : "tt0000108",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "518" } 
+ , 
+ , 
+ { "txonst" : "tt0000109",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "503" } 
+ , 
+ { "txonst" : "tt0000110",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "507" } 
+ , 
+ { "txonst" : "tt0000111",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "521" } 
+ { "txonst" : "tt0000112",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "501" } 
+ , 
+ { "txonst" : "tt0000113",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "525" } 
+ , 
+ , 
+ { "txonst" : "tt0000114",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "29" } 
+ { "txonst" : "tt0000115",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "33" } 
+ , 
+ { "txonst" : "tt0000116",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "26" } 
+ , 
+ { "txonst" : "tt0000117",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "155" } 
+ , 
+ { "txonst" : "tt0000118",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "27" } 
+ , 
+ { "txonst" : "tt0000119",  "rating" : 
+      "5.4", "numberOfVotes" : 
+       "49" } 
+ , 
+ { "txonst" : "tt0000120",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "46" } 
+ , 
+ { "txonst" : "tt0000121",  "rating" : 
+      "4.3", "numberOfVotes" : 
+       "73" } 
+ , 
+ { "txonst" : "tt0000122",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "30" } 
+ , 
+ { "txonst" : "tt0000123",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "118" } 
+ , 
+ , 
+ { "txonst" : "tt0000124",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "29" } 
+ , 
+ { "txonst" : "tt0000125",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "14" } 
+ , 
+ { "txonst" : "tt0000126",  "rating" : 
+      "5.5", "numberOfVotes" : 
+       "29" } 
+ { "txonst" : "tt0000127",  "rating" : 
+      "4.6", "numberOfVotes" : 
+       "25" } 
+ , 
+ , 
+ { "txonst" : "tt0000128",  "rating" : 
+      "5.6", "numberOfVotes" : 
+       "37" } 
+ , 
+ { "txonst" : "tt0000129",  "rating" : 
+      "6.5", "numberOfVotes" : 
+       "49" } 
+ { "txonst" : "tt0000130",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "27" } 
+ , 
+ { "txonst" : "tt0000131",  "rating" : 
+      "5.8", "numberOfVotes" : 
+       "1302" } 
+ , 
+ { "txonst" : "tt0000132",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "1004" } 
+ , 
+ { "txonst" : "tt0000133",  "rating" : 
+      "6.1", "numberOfVotes" : 
+       "34" } 
+ , 
+ { "txonst" : "tt0000134",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "18" } 
+ , 
+ { "txonst" : "tt0000135",  "rating" : 
+      "6.6", "numberOfVotes" : 
+       "77" } 
+ , 
+ , 
+ { "txonst" : "tt0000137",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "28" } 
+ , 
+ { "txonst" : "tt0000138",  "rating" : 
+      "6.5", "numberOfVotes" : 
+       "1049" } 
+ { "txonst" : "tt0000139",  "rating" : 
+      "5.3", "numberOfVotes" : 
+       "24" } 
+ , 
+ { "txonst" : "tt0000140",  "rating" : 
+      "5", "numberOfVotes" : 
+       "275" } 
+ , 
+ { "txonst" : "tt0000141",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "91" } 
+ , 
+ , 
+ { "txonst" : "tt0000142",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "28" } 
+ , 
+ { "txonst" : "tt0000143",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "244" } 
+ { "txonst" : "tt0000144",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "292" } 
+ , 
+ , 
+ { "txonst" : "tt0000145",  "rating" : 
+      "3.9", "numberOfVotes" : 
+       "13" } 
+ { "txonst" : "tt0000146",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "26" } 
+ , 
+ { "txonst" : "tt0000147",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "436" } 
+ , 
+ { "txonst" : "tt0000148",  "rating" : 
+      "3.7", "numberOfVotes" : 
+       "14" } 
+ , 
+ , 
+ { "txonst" : "tt0000149",  "rating" : 
+      "4.6", "numberOfVotes" : 
+       "21" } 
+ , 
+ { "txonst" : "tt0000150",  "rating" : 
+      "5.4", "numberOfVotes" : 
+       "156" } 
+ , 
+ { "txonst" : "tt0000151",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "57" } 
+ { "txonst" : "tt0000152",  "rating" : 
+      "6.1", "numberOfVotes" : 
+       "231" } 
+ , 
+ , 
+ { "txonst" : "tt0000153",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "411" } 
+ { "txonst" : "tt0000154",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "13" } 
+ , 
+ { "txonst" : "tt0000155",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "27" } 
+ , 
+ , 
+ { "txonst" : "tt0000156",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "22" } 
+ { "txonst" : "tt0000157",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "15" } 
+ , 
+ , 
+ { "txonst" : "tt0000158",  "rating" : 
+      "3.5", "numberOfVotes" : 
+       "15" } 
+ , 
+ { "txonst" : "tt0000159",  "rating" : 
+      "5.3", "numberOfVotes" : 
+       "113" } 
+ , 
+ { "txonst" : "tt0000160",  "rating" : 
+      "5.3", "numberOfVotes" : 
+       "26" } 
+ , 
+ { "txonst" : "tt0000161",  "rating" : 
+      "3.9", "numberOfVotes" : 
+       "14" } 
+ { "txonst" : "tt0000162",  "rating" : 
+      "5.4", "numberOfVotes" : 
+       "452" } 
+ , 
+ { "txonst" : "tt0000163",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "13" } 
+ , 
+ { "txonst" : "tt0000164",  "rating" : 
+      "5", "numberOfVotes" : 
+       "286" } 
+ , 
+ { "txonst" : "tt0000165",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "116" } 
+ , 
+ , 
+ { "txonst" : "tt0000166",  "rating" : 
+      "3.8", "numberOfVotes" : 
+       "18" } 
+ { "txonst" : "tt0000167",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "134" } 
+ , 
+ { "txonst" : "tt0000168",  "rating" : 
+      "3.5", "numberOfVotes" : 
+       "16" } 
+ , 
+ , 
+ { "txonst" : "tt0000169",  "rating" : 
+      "3.7", "numberOfVotes" : 
+       "44" } 
+ { "txonst" : "tt0000170",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "235" } 
+ , 
+ , 
+ { "txonst" : "tt0000171",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "14" } 
+ { "txonst" : "tt0000172",  "rating" : 
+      "6.1", "numberOfVotes" : 
+       "845" } 
+ , 
+ , 
+ { "txonst" : "tt0000173",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "44" } 
+ { "txonst" : "tt0000174",  "rating" : 
+      "4.6", "numberOfVotes" : 
+       "124" } 
+ { "txonst" : "tt0000175",  "rating" : 
+      "5", "numberOfVotes" : 
+       "205" } 
+ , 
+ , 
+ { "txonst" : "tt0000176",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "11" } 
+ { "txonst" : "tt0000177",  "rating" : 
+      "4.6", "numberOfVotes" : 
+       "232" } 
+ , 
+ , 
+ , 
+ { "txonst" : "tt0000178",  "rating" : 
+      "5.1", "numberOfVotes" : 
+       "167" } 
+ , 
+ { "txonst" : "tt0000179",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "40" } 
+ { "txonst" : "tt0000181",  "rating" : 
+      "6.8", "numberOfVotes" : 
+       "58" } 
+ , 
+ , 
+ { "txonst" : "tt0000182",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "529" } 
+ { "txonst" : "tt0000183",  "rating" : 
+      "6", "numberOfVotes" : 
+       "35" } 
+ , 
+ { "txonst" : "tt0000184",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "310" } 
+ , 
+ { "txonst" : "tt0000186",  "rating" : 
+      "4.2", "numberOfVotes" : 
+       "21" } 
+ , 
+ { "txonst" : "tt0000187",  "rating" : 
+      "5", "numberOfVotes" : 
+       "51" } 
+ , 
+ { "txonst" : "tt0000188",  "rating" : 
+      "4", "numberOfVotes" : 
+       "11" } 
+ , 
+ , 
+ { "txonst" : "tt0000190",  "rating" : 
+      "5", "numberOfVotes" : 
+       "138" } 
+ { "txonst" : "tt0000192",  "rating" : 
+      "4.5", "numberOfVotes" : 
+       "178" } 
+ , 
+ { "txonst" : "tt0000194",  "rating" : 
+      "5.4", "numberOfVotes" : 
+       "83" } 
+ , 
+ , 
+ { "txonst" : "tt0000196",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "27" } 
+ { "txonst" : "tt0000197",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "19" } 
+ , 
+ , 
+ { "txonst" : "tt0000198",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "18" } 
+ { "txonst" : "tt0000199",  "rating" : 
+      "4.3", "numberOfVotes" : 
+       "13" } 
+ , 
+ , 
+ { "txonst" : "tt0000204",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "13" } 
+ , 
+ { "txonst" : "tt0000205",  "rating" : 
+      "5", "numberOfVotes" : 
+       "30" } 
+ , 
+ { "txonst" : "tt0000206",  "rating" : 
+      "5", "numberOfVotes" : 
+       "12" } 
+ , 
+ { "txonst" : "tt0000207",  "rating" : 
+      "5.5", "numberOfVotes" : 
+       "12" } 
+ , 
+ { "txonst" : "tt0000208",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "540" } 
+ , 
+ { "txonst" : "tt0000209",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "28" } 
+ , 
+ { "txonst" : "tt0000210",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "30" } 
+ , 
+ { "txonst" : "tt0000211",  "rating" : 
+      "7.5", "numberOfVotes" : 
+       "4023" } 
+ { "txonst" : "tt0000213",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "223" } 
+ , 
+ , 
+ { "txonst" : "tt0000214",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "90" } 
+ { "txonst" : "tt0000215",  "rating" : 
+      "4.1", "numberOfVotes" : 
+       "120" } 
+ , 
+ { "txonst" : "tt0000219",  "rating" : 
+      "6.6", "numberOfVotes" : 
+       "30" } 
+ { "txonst" : "tt0000218",  "rating" : 
+      "5.9", "numberOfVotes" : 
+       "603" } 
+ , 
+ , 
+ { "txonst" : "tt0000222",  "rating" : 
+      "4.6", "numberOfVotes" : 
+       "221" } 
+ , 
+ , 
+ { "txonst" : "tt0000223",  "rating" : 
+      "5.4", "numberOfVotes" : 
+       "18" } 
+ { "txonst" : "tt0000228",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "261" } 
+ { "txonst" : "tt0000225",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "35" } 
+ , 
+ , 
+ { "txonst" : "tt0000229",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "106" } 
+ , 
+ { "txonst" : "tt0000230",  "rating" : 
+      "6.5", "numberOfVotes" : 
+       "1562" } 
+ , 
+ { "txonst" : "tt0000231",  "rating" : 
+      "3.6", "numberOfVotes" : 
+       "16" } 
+ , 
+ { "txonst" : "tt0000233",  "rating" : 
+      "6", "numberOfVotes" : 
+       "10" } 
+ , 
+ { "txonst" : "tt0000234",  "rating" : 
+      "6", "numberOfVotes" : 
+       "68" } 
+ , 
+ { "txonst" : "tt0000235",  "rating" : 
+      "6.2", "numberOfVotes" : 
+       "818" } 
+ , 
+ { "txonst" : "tt0000239",  "rating" : 
+      "5.5", "numberOfVotes" : 
+       "230" } 
+ , 
+ , 
+ { "txonst" : "tt0000240",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "88" } 
+ { "txonst" : "tt0000242",  "rating" : 
+      "6.4", "numberOfVotes" : 
+       "1126" } 
+ , 
+ { "txonst" : "tt0000245",  "rating" : 
+      "6.2", "numberOfVotes" : 
+       "48" } 
+ , 
+ { "txonst" : "tt0000246",  "rating" : 
+      "6.4", "numberOfVotes" : 
+       "1001" } 
+ , 
+ { "txonst" : "tt0000247",  "rating" : 
+      "5", "numberOfVotes" : 
+       "467" } 
+ , 
+ { "txonst" : "tt0000248",  "rating" : 
+      "6.1", "numberOfVotes" : 
+       "1512" } 
+ , 
+ { "txonst" : "tt0000251",  "rating" : 
+      "5.4", "numberOfVotes" : 
+       "126" } 
+ , 
+ { "txonst" : "tt0000253",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "25" } 
+ , 
+ { "txonst" : "tt0000256",  "rating" : 
+      "4.6", "numberOfVotes" : 
+       "164" } 
+ , 
+ { "txonst" : "tt0000261",  "rating" : 
+      "5.5", "numberOfVotes" : 
+       "61" } 
+ , 
+ , 
+ { "txonst" : "tt0000264",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "414" } 
+ , 
+ { "txonst" : "tt0000265",  "rating" : 
+      "4.3", "numberOfVotes" : 
+       "135" } 
+ { "txonst" : "tt0000269",  "rating" : 
+      "4.8", "numberOfVotes" : 
+       "127" } 
+ , 
+ { "txonst" : "tt0000271",  "rating" : 
+      "6.2", "numberOfVotes" : 
+       "12" } 
+ , 
+ { "txonst" : "tt0000272",  "rating" : 
+      "5.6", "numberOfVotes" : 
+       "796" } 
+ , 
+ { "txonst" : "tt0000273",  "rating" : 
+      "5.5", "numberOfVotes" : 
+       "585" } 
+ , 
+ , 
+ { "txonst" : "tt0000274",  "rating" : 
+      "5.6", "numberOfVotes" : 
+       "236" } 
+ , 
+ { "txonst" : "tt0000276",  "rating" : 
+      "6.9", "numberOfVotes" : 
+       "31" } 
+ { "txonst" : "tt0000277",  "rating" : 
+      "6.2", "numberOfVotes" : 
+       "58" } 
+ , 
+ { "txonst" : "tt0000278",  "rating" : 
+      "6", "numberOfVotes" : 
+       "22" } 
+ , 
+ { "txonst" : "tt0000279",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "23" } 
+ , 
+ , 
+ { "txonst" : "tt0000280",  "rating" : 
+      "4.7", "numberOfVotes" : 
+       "23" } 
+ { "txonst" : "tt0000281",  "rating" : 
+      "5", "numberOfVotes" : 
+       "22" } 
+ , 
+ { "txonst" : "tt0000283",  "rating" : 
+      "5.8", "numberOfVotes" : 
+       "17" } 
+ , 
+ { "txonst" : "tt0000284",  "rating" : 
+      "5.3", "numberOfVotes" : 
+       "219" } 
+ , 
+ , 
+ { "txonst" : "tt0000285",  "rating" : 
+      "5", "numberOfVotes" : 
+       "24" } 
+ { "txonst" : "tt0000286",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "225" } 
+ , 
+ { "txonst" : "tt0000287",  "rating" : 
+      "4.9", "numberOfVotes" : 
+       "157" } 
+ , 
+ { "txonst" : "tt0000288",  "rating" : 
+      "5.2", "numberOfVotes" : 
+       "192" } 
+ , 
+ { "txonst" : "tt0000292",  "rating" : 
+      "5.4", "numberOfVotes" : 
+       "93" } 
+ , 
+ { "txonst" : "tt0000296",  "rating" : 
+      "5.7", "numberOfVotes" : 
+       "239" } 
+ , 
+ , 
+ { "txonst" : "tt0000299",  "rating" : 
+      "5.5", "numberOfVotes" : 
+       "236" } 
+ { "txonst" : "tt0000300",  "rating" : 
+      "6.9", "numberOfVotes" : 
+       "1200" } 
+ , 
+ { "txonst" : "tt0000301",  "rating" : 
+      "4.4", "numberOfVotes" : 
+       "387" } 
+ ] }  

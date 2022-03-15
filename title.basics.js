@@ -69,6 +69,14 @@ const titleType = [
 ];
 
 
+function stringBitToStringBoolean(string){
+  if (string == "0") {
+    return "false"
+  }else{
+    return "true"
+  }
+}
+
 let table = giveEmptyTable()[0]
 let tableGenresToTconst = giveEmptyTable()[1]
 lineReader.eachLine('data.tsv', function(line,last) {
@@ -88,7 +96,7 @@ lineReader.eachLine('data.tsv', function(line,last) {
       (titleType.indexOf(array[1]) + 1).toString(),
       array[2],
       array[3],
-      array[4],
+      stringBitToStringBoolean(array[4]),
       array[5],
       array[6],
       array[7]
@@ -128,7 +136,7 @@ function giveEmptyTable(){
     table.columns.add("titleType", sql.VarChar(255), { nullable: false });
     table.columns.add("primaryTitle", sql.NVarChar(sql.MAX), {  nullable: true });
     table.columns.add("OriginalTitle", sql.NVarChar(sql.MAX), { nullable: true });
-    table.columns.add("isAdult", sql.VarChar(255), { nullable: true });
+    table.columns.add("isAdult", sql.Bit, { nullable: true });
     table.columns.add("startYear", sql.VarChar(255), { nullable: true });
     table.columns.add("endYear", sql.VarChar(255), { nullable: true });
     table.columns.add("runtimeMinutes", sql.VarChar(255), { nullable: true });

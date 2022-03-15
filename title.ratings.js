@@ -70,7 +70,8 @@ function giveEmptyTable(){
   });
   table.columns.add("averageRating", sql.Real, { nullable: true });
   table.columns.add("numVotes", sql.Int, { nullable: true });
-    
+  
+  
     return table
 }
 
