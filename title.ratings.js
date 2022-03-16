@@ -27,11 +27,11 @@ let table = giveEmptyTable()
 
 lineReader.eachLine('ratingData.tsv', function(line,last) {
 
-  if (countCounter == 0 & counter == 0) {
-   console.log("First line is " + line)
-   line = "tt0000000	0.0	0000"
-   console.log("First line is " + line)
-  }
+  // if (countCounter == 0 & counter == 0) {
+  //  console.log("First line is " + line)
+  //  line = "tt0000000	0.0	0000"
+  //  console.log("First line is " + line)
+  // }
 
   counter++
   let array = line.split("\t");

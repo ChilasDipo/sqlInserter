@@ -28,11 +28,11 @@ let writer = giveEmptyTable()[1]
 
 lineReader.eachLine('crewData.tsv', function(line,last) {
 
-  if ((countCounter == 0) & (counter == 0)) {
-    console.log("First line is " + line);
-    line = "tt0000000	nm0000000	\N";
-    console.log("First line is " + line);
-  }
+  // if ((countCounter == 0) & (counter == 0)) {
+  //   console.log("First line is " + line);
+  //   line = "tt0000000	nm0000000	\N";
+  //   console.log("First line is " + line);
+  // }
 
   counter++
   let array = line.split("\t");
@@ -72,7 +72,7 @@ lineReader.eachLine('crewData.tsv', function(line,last) {
       director = giveEmptyTable()[0]
       writer = giveEmptyTable()[1]
 
-      if (last==true || countCounter == 2)  {
+      if (last==true)  {
         console.log('Done')
         return false
       }

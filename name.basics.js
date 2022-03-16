@@ -28,11 +28,11 @@ let primaryProfession = giveEmptyTable()[1];
 let knowForTitles = giveEmptyTable()[2];
 
 lineReader.eachLine("nameData.tsv", function (line, last) {
-  if ((countCounter == 0) & (counter == 0)) {
-    console.log("First line is " + line);
-    line = "nm0000000	test	0000	0000	test,test,test	test,test,test,test";
-    console.log("First line is " + line);
-  }
+  // if ((countCounter == 0) & (counter == 0)) {
+  //   console.log("First line is " + line);
+  //   line = "nm0000000	test	0000	0000	test,test,test	test,test,test,test";
+  //   console.log("First line is " + line);
+  // }
 
   counter++;
   let array = line.split("\t");
@@ -68,7 +68,7 @@ lineReader.eachLine("nameData.tsv", function (line, last) {
     primaryProfession = giveEmptyTable()[1];
     knowForTitles = giveEmptyTable()[2];
 
-    if (last == true || countCounter == 10) {
+    if (last == true) {
       return false;
     }
   }

@@ -120,7 +120,7 @@ lineReader.eachLine('data.tsv', function(line,last) {
       table = giveEmptyTable()[0]
       tableGenresToTconst = giveEmptyTable()[1]
 
-      if (last==true || countCounter == 8) {
+      if (last==true) {
         console.log('Done')
         return false
       }
@@ -159,7 +159,7 @@ async function insertData(table,tableGenresToTconst){
 const poolPromise = new sql.ConnectionPool(sqlConfig)
   .connect()
   .then(pool => {
-   // console.log('Connected to MSSQL')
+   console.log('Connected to MSSQL')
     pool.request().bulk(table);
     pool.request().bulk(tableGenresToTconst);
     return pool

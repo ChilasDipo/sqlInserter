@@ -28,11 +28,11 @@ let types = giveEmptyTable()[1];
 let attributes = giveEmptyTable()[2]
 
 lineReader.eachLine("akasdata.tsv", function (line, last) {
-  if ((countCounter == 0) & (counter == 0)) {
-    console.log("First line is " + line);
-    line = "tt00000000	0	test	\N	\N	\N	0";
-    console.log("First line is " + line);
-  }
+  // if ((countCounter == 0) & (counter == 0)) {
+  //   console.log("First line is " + line);
+  //   line = "tt00000000	0	test	\N	\N	\N	0";
+  //   console.log("First line is " + line);
+  // }
 
   counter++;
   let array = line.split("\t");
@@ -42,8 +42,10 @@ lineReader.eachLine("akasdata.tsv", function (line, last) {
     }
   }
 
+  let akaconst = array[1]+array[0]
   
   table.rows.add(
+    akaconst,
     array[0],
     parseInt(array[1]),
     array[2],
@@ -76,7 +78,7 @@ lineReader.eachLine("akasdata.tsv", function (line, last) {
     table = giveEmptyTable()[0];
     types = giveEmptyTable()[1];
     attributes = giveEmptyTable()[2]
-    if (last == true || countCounter == 35) {
+    if (last == true) {
       console.log("Done");
       return false;
     }
@@ -86,6 +88,7 @@ lineReader.eachLine("akasdata.tsv", function (line, last) {
 function giveEmptyTable() {
   let table = new sql.Table("AKAS");
   table.create = true;
+  table.columns.add("akaconst", sql.VarChar(255), {nullable: false, primary: true});
   table.columns.add("tconst", sql.VarChar(255), {nullable: false});
   table.columns.add("ordering", sql.Int, { nullable: true });
   table.columns.add("title", sql.NVarChar(sql.MAX), { nullable: true });
@@ -96,13 +99,13 @@ function giveEmptyTable() {
     
   let type = new sql.Table("Types");
   type.create = true;
-  type.columns.add("tconst", sql.VarChar(255), { nullable: false });
+  type.columns.add("akaconst", sql.VarChar(255), { nullable: false });
   type.columns.add("type", sql.VarChar(255), { nullable: false });
 
     
   let attributes = new sql.Table("Attributes");
   attributes.create = true;
-  attributes.columns.add("tconst", sql.VarChar(255), { nullable: false });
+  attributes.columns.add("akaconst", sql.VarChar(255), { nullable: false });
   attributes.columns.add("attribute", sql.VarChar(255), { nullable: false });
 
 
