@@ -28,11 +28,11 @@ let writer = giveEmptyTable()[1]
 
 lineReader.eachLine('crewData.tsv', function(line,last) {
 
-  // if ((countCounter == 0) & (counter == 0)) {
-  //   console.log("First line is " + line);
-  //   line = "tt0000000	nm0000000	\N";
-  //   console.log("First line is " + line);
-  // }
+  if ((countCounter == 0) & (counter == 0)) {
+    console.log("First line is " + line);
+    line = "tt0000000	nm0000000	\N";
+    console.log("First line is " + line);
+  }
 
   counter++
   let array = line.split("\t");
@@ -84,12 +84,12 @@ function giveEmptyTable(){
   let director = new sql.Table("Directors");
   director.create = true;
   director.columns.add("tconst", sql.VarChar(255), { nullable: false });
-  director.columns.add("nconst", sql.VarChar(255), { nullable: true });
+  director.columns.add("nconst", sql.VarChar(255), { nullable: false });
   
   let writer = new sql.Table("Writers");
   writer.create = true;
   writer.columns.add("tconst", sql.VarChar(255), { nullable: false });
-  writer.columns.add("nconst", sql.VarChar(255), { nullable: true });
+  writer.columns.add("nconst", sql.VarChar(255), { nullable: false });
   
     
     return [director,writer ]

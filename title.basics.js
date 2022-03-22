@@ -71,9 +71,9 @@ const titleType = [
 
 function stringBitToStringBoolean(string){
   if (string == "0") {
-    return "false"
+    return false
   }else{
-    return "true"
+    return true
   }
 }
 
@@ -81,6 +81,11 @@ let table = giveEmptyTable()[0]
 let tableGenresToTconst = giveEmptyTable()[1]
 lineReader.eachLine('data.tsv', function(line,last) {
 
+  if ((countCounter == 0) & (counter == 0)) {
+    console.log("First line is " + line);
+  line = "tt0000000	short	Test	Test	0	1894	\N	1	Short";
+  console.log("First line is " + line);
+ }
 
 
   counter++
@@ -93,7 +98,7 @@ lineReader.eachLine('data.tsv', function(line,last) {
 
     table.rows.add(
       array[0],
-      (titleType.indexOf(array[1]) + 1).toString(),
+      parseInt(titleType.indexOf(array[1]) + 1),
       array[2],
       array[3],
       stringBitToStringBoolean(array[4]),
@@ -133,7 +138,7 @@ function giveEmptyTable(){
   let table = new sql.Table('Movies') // or temporary table, e.g. #temptable
     table.create = true
     table.columns.add('tconst', sql.VarChar(255), {nullable: false, primary: true})
-    table.columns.add("titleType", sql.VarChar(255), { nullable: false });
+    table.columns.add("titleType", sql.Int, { nullable: false });
     table.columns.add("primaryTitle", sql.NVarChar(sql.MAX), {  nullable: true });
     table.columns.add("OriginalTitle", sql.NVarChar(sql.MAX), { nullable: true });
     table.columns.add("isAdult", sql.Bit, { nullable: true });

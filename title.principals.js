@@ -62,7 +62,7 @@ lineReader.eachLine('principalsData.tsv', function(line,last) {
       table = giveEmptyTable()
       
 
-      if (last==true || countCounter == 2 ) {
+      if (last==true  ) {
         console.log('Done')
         return false
       }
@@ -77,9 +77,9 @@ function giveEmptyTable(){
     table.columns.add('tconst', sql.VarChar(255), {nullable: false})
     table.columns.add("ordering", sql.Int, { nullable: false });
     table.columns.add("nconst", sql.VarChar(255), {  nullable: true });
-    table.columns.add("category", sql.VarChar(255), { nullable: true });
-    table.columns.add("job", sql.VarChar(255), { nullable: true });
-    table.columns.add("characters", sql.VarChar(255), { nullable: true });
+    table.columns.add("category", sql.NVarChar(sql.MAX), { nullable: true });
+    table.columns.add("job", sql.NVarChar(sql.MAX), { nullable: true });
+    table.columns.add("characters", sql.NVarChar(sql.MAX), { nullable: true });
     
     return table
 }
@@ -90,7 +90,7 @@ async function insertData(table){
 const poolPromise = new sql.ConnectionPool(sqlConfig)
   .connect()
   .then(pool => {
-   // console.log('Connected to MSSQL')
+    console.log('Connected to MSSQL')
     pool.request().bulk(table);
     return pool
   })
