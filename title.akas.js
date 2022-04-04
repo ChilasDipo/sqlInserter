@@ -1,10 +1,11 @@
+//Importer Libaries som bliver brugt, et til at læse TSV filen, et til vores database koder og et til at snakke med databasen
 const lineReader = require("line-reader");
 const env = require("dotenv").config();
 const sql = require("mssql");
-
-let bulkList = [];
+//Counter for bulk insert den tæller hvor mange som er blevet sat ind
 let counter = 0;
 
+//Sql object til at komunikere med databasen
 const sqlConfig = {
   user: process.env.user,
   password: process.env.password,
@@ -21,8 +22,10 @@ const sqlConfig = {
   },
 };
 
+//counter for antalet af gange, hvor der er sket et bulk insert
 let countCounter = 0;
 
+//Opsætter table hvor der kan sætte data ind i (See giveEmptyTable function for table stukture)
 let table = giveEmptyTable()[0];
 let types = giveEmptyTable()[1];
 let attributes = giveEmptyTable()[2]
